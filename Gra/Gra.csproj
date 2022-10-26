@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\arrows.png" />
+    <None Remove="Assets\arrows2.png" />
+    <None Remove="Assets\BG_1.png" />
+    <None Remove="Assets\BG_2.png" />
+    <None Remove="Assets\Blue.png" />
+    <None Remove="Assets\Border.png" />
+    <None Remove="Assets\Empty.png" />
+    <None Remove="Assets\Green.png" />
+    <None Remove="Assets\I.png" />
+    <None Remove="Assets\icons8-a-key-50.png" />
+    <None Remove="Assets\icons8-d-key-50.png" />
+    <None Remove="Assets\icons8-s-key-50.png" />
+    <None Remove="Assets\icons8-space-key-50.png" />
+    <None Remove="Assets\icons8-w-key-50.png" />
+    <None Remove="Assets\keyboard.png" />
+    <None Remove="Assets\keyboard2.png" />
+    <None Remove="Assets\LightBlue.png" />
+    <None Remove="Assets\Orange.png" />
+    <None Remove="Assets\Purple.png" />
+    <None Remove="Assets\Red.png" />
+    <None Remove="Assets\space_icon.png" />
+    <None Remove="Assets\square-targeting-interface-symbol.png" />
+    <None Remove="Assets\square.png" />
+	<None Remove="Assets\J.png" />
+	<None Remove="Assets\L.png" />
+	<None Remove="Assets\O.png" />
+	<None Remove="Assets\S.png" />
+	<None Remove="Assets\T.png" />
+	<None Remove="Assets\tlo.png" />
+	<None Remove="Assets\wasd.png" />
+	<None Remove="Assets\Yellow.png" />
+    <None Remove="Assets\Z.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\arrows.png" />
+    <Resource Include="Assets\arrows2.png" />
+    <Resource Include="Assets\BG_1.png" />
+    <Resource Include="Assets\BG_2.png" />
+    <Resource Include="Assets\Empty.png" />
+    <Resource Include="Assets\Blue.png" />
+    <Resource Include="Assets\Border.png" />
+    <Resource Include="Assets\Green.png" />
+    <Resource Include="Assets\I.png" />
+    <Resource Include="Assets\icons8-a-key-50.png" />
+    <Resource Include="Assets\icons8-d-key-50.png" />
+    <Resource Include="Assets\icons8-s-key-50.png" />
+    <Resource Include="Assets\icons8-space-key-50.png" />
+    <Resource Include="Assets\icons8-w-key-50.png" />
+    <Resource Include="Assets\keyboard.png" />
+    <Resource Include="Assets\keyboard2.png" />
+    <Resource Include="Assets\LightBlue.png" />
+    <Resource Include="Assets\Orange.png" />
+    <Resource Include="Assets\Purple.png" />
+    <Resource Include="Assets\Red.png" />
+    <Resource Include="Assets\space_icon.png" />
+    <Resource Include="Assets\square-targeting-interface-symbol.png" />
+    <Resource Include="Assets\square.png" />
+	<Resource Include="Assets\J.png" />
+	<Resource Include="Assets\L.png" />
+	<Resource Include="Assets\O.png" />
+	<Resource Include="Assets\S.png" />
+	<Resource Include="Assets\T.png" />
+	<Resource Include="Assets\tlo.png" />
+	<Resource Include="Assets\wasd.png" />
+	<Resource Include="Assets\Yellow.png" />
+    <Resource Include="Assets\Z.png" />
+  </ItemGroup>
+
+</Project>

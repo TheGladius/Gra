@@ -1,0 +1,364 @@
+﻿<Window x:Class="Gra.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gra"
+        mc:Ignorable="d"
+        Title="Blockomania"
+        Width="1280"
+        Height="720"
+        FontFamily="Comic Sans MS"
+        FontSize="25"
+        Foreground="White"
+        KeyDown="Ruch">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/> <!-- #0 tytul -->
+            <RowDefinition Height="*"/> <!-- #1 plansza, punkty i reszta -->
+            <RowDefinition Height="auto"/> <!-- #2 copyright-->
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/> <!-- #0 -->
+            <ColumnDefinition Width="auto"/> <!-- #1 plansza -->
+            <ColumnDefinition Width="*"/> <!-- #2 punkty i nastepny klocek -->
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/tlo.png"/>
+        </Grid.Background>
+
+        <!-- tytul -->
+        <TextBlock 
+            Grid.Row="0"
+            Grid.Column="1"
+            FontSize="30"
+            FontWeight="Bold"
+            TextAlignment="Center"
+            Text="Blockomania"
+        />
+
+        <!-- copyright -->
+        <TextBlock 
+            Grid.Row="2"
+            Grid.Column="2"
+            FontSize="10"
+            TextAlignment="Right"
+            Text="Made by Jakub Sadowski"
+        />
+
+        <!-- punkty -->
+        <StackPanel 
+            Grid.Row="1"
+            Grid.Column="2"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center">
+            <TextBlock
+                x:Name="Punkty"
+                FontSize="30"
+                TextAlignment="Center"
+                Text="Zdobyte Punkty: "
+            />
+        </StackPanel>
+
+        <!-- nastepny klocek -->
+        <StackPanel 
+            Grid.Row="1"
+            Grid.Column="2"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Margin="0,60,0,0">
+            <TextBlock
+                FontSize="30"
+                TextAlignment="Center"
+                Text="Następny:"
+            />
+            <Image
+                x:Name="nastepny"
+                Width="128"
+                Height="128"
+                Margin="10"
+            />
+        </StackPanel>
+
+        <!-- sterowanie -->
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="280"/> <!-- przerwa -->
+                <RowDefinition Height="40"/> <!-- sterowanie -->
+                <RowDefinition Height="128"/> <!-- obrazki -->
+                <RowDefinition Height="auto"/> <!-- w i obracanie-->
+                <RowDefinition Height="auto"/> <!-- asd i ruchy -->
+                <RowDefinition Height="20"/> <!-- ^ -->
+                <RowDefinition Height="20"/> <!-- ruch w dol -->
+                <RowDefinition Height="auto"/> <!-- spacja -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- napis sterowanie -->
+            <TextBlock 
+                Grid.Row="1"
+                Grid.Column="1"
+                FontSize="30"
+                TextAlignment="Center"
+                Text="Sterowanie:"
+            />
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- lub -->
+                <TextBlock 
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="30"
+                    TextAlignment="Center"
+                    Text="lub"
+                    Margin="0,40,0,0"
+                />
+                <!-- strzalki -->
+                <StackPanel 
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+                    <Image 
+                        Source="/Assets/keyboard.png"
+                        Width="128"
+                        Height="128"
+                    />
+                </StackPanel>
+                <!-- wasd -->
+                <StackPanel 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Image 
+                        Source="/Assets/wasd.png"
+                        Width="128"
+                        Height="128"
+                    />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <Image 
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Source="/Assets/icons8-w-key-50.png"
+                        Width="32"
+                        Height="32"
+                    />
+                </StackPanel>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    FontSize="20"
+                    TextAlignment="Left"
+                    Text=" ⇐ obracanie"
+                />
+            </Grid>
+            
+            <Grid Grid.Row="4" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="20"
+                    TextAlignment="Center"
+                    Text="ruch w lewo ⇒ "
+                />
+                <Image 
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Source="/Assets/icons8-a-key-50.png"
+                    Width="32"
+                    Height="32"
+                />
+                <Image 
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Source="/Assets/icons8-s-key-50.png"
+                    Width="32"
+                    Height="32"
+                />
+                <Image 
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Source="/Assets/icons8-d-key-50.png"
+                    Width="32"
+                    Height="32"
+                />
+                <TextBlock 
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    FontSize="20"
+                    TextAlignment="Center"
+                    Text=" ⇐ ruch w prawo"
+                />
+            </Grid>
+
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <TextBlock 
+                        FontSize="20"
+                        TextAlignment="Center"
+                        Text="⇑"
+                    />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="6" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <TextBlock 
+                        FontSize="20"
+                        TextAlignment="Center"
+                        Text="ruch w dol"
+                    />
+                </StackPanel>
+            </Grid>
+            
+            <Grid Grid.Row="7" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <Image
+                        Source="/Assets/icons8-space-key-50.png"
+                        Width="32"
+                        Height="32"
+                        Margin="10"
+                    />
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center">
+                    <TextBlock 
+                        FontSize="20"
+                        TextAlignment="Center"
+                        Text="⇐ upuść klocek"
+                    />
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!-- plansza -->
+        <!-- 640x320 -->
+        <Viewbox 
+            Grid.Row="1"
+            Grid.Column="1">
+            <Canvas 
+                x:Name="Canvas"
+                Background="#202020"
+                Width="320"
+                Height="640" 
+                ClipToBounds="True"
+                Loaded="Plansza"
+            />
+        </Viewbox>
+
+        <!-- koniec gry -->
+        <Grid 
+            x:Name="Game_Over"
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="3"
+            Background="#CC000000"
+            Visibility="Hidden">
+
+            <StackPanel 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock 
+                    FontSize="60"
+                    TextAlignment="Center"
+                    Text="Game Over"
+                />
+                <TextBlock 
+                    x:Name="Koncowe_punkty"
+                    FontSize="30"
+                    TextAlignment="Center"
+                    Text="Punkty: "
+                    Margin="0,20,0,20"
+                />
+                <Button
+                    Background="#00A170"
+                    Margin="0,20,0,0"
+                    Padding="20"
+                    Content="Zagraj ponownie"
+                    Click="Zagraj_ponownie"
+                />
+                <Button
+                    Background="Red"
+                    Margin="0,20,0,0"
+                    Padding="20"
+                    Content="Wyjdź"
+                    Click="Koniec_gry"
+                />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
