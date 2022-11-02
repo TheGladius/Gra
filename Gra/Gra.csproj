@@ -19,7 +19,6 @@
     <None Remove="Assets\I.png" />
     <None Remove="Assets\icons8-a-key-50.png" />
     <None Remove="Assets\icons8-d-key-50.png" />
-    <None Remove="Assets\icons8-gif.gif" />
     <None Remove="Assets\icons8-s-key-50.png" />
     <None Remove="Assets\icons8-space-key-50.png" />
     <None Remove="Assets\icons8-w-key-50.png" />
@@ -55,7 +54,6 @@
     <Resource Include="Assets\I.png" />
     <Resource Include="Assets\icons8-a-key-50.png" />
     <Resource Include="Assets\icons8-d-key-50.png" />
-    <Resource Include="Assets\icons8-gif.gif" />
     <Resource Include="Assets\icons8-s-key-50.png" />
     <Resource Include="Assets\icons8-space-key-50.png" />
     <Resource Include="Assets\icons8-w-key-50.png" />

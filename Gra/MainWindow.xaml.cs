@@ -73,20 +73,11 @@ namespace Gra
                 for (int k = 0; k < 10; k++)
                 {
                     int zmienna = roz.Plansza[r, k]; //roz.Plansza to Plansza z Rozgrywka, na poczotku jest pusta, ale potem jest aktualizowana przy ruchu i caly czas podawana do wypelniona_plansza, żeby plansza sie aktualizowala
-                    wypelniona_plansza[r, k].Opacity = 1; //musi byc 1 jak mamy 0.2 na cieniu klocka, bo musi wrócić do normalnego
                     wypelniona_plansza[r, k].Source = pola[zmienna];
                 }
-            //cien klocka na dole planszy
-            int x = roz.Ile_rzedow(); 
-            foreach (Wspolrzedne w in roz.Klocek.Kolekcja_wsp())
-            {
-                wypelniona_plansza[w.rzad + x, w.kolumna].Opacity = 0.2;
-                wypelniona_plansza[w.rzad + x, w.kolumna].Source = pola[roz.Klocek.numer];
-            }
             //rysowanie klocka na planszy
             foreach (Wspolrzedne w in roz.Klocek.Kolekcja_wsp()) //wspolrzedne z kolekcji tylko tego konkretnego wylosowanego w klasie Rozgrywka klocka
             {
-                wypelniona_plansza[w.rzad, w.kolumna].Opacity = 1;
                 wypelniona_plansza[w.rzad, w.kolumna].Source = pola[roz.Klocek.numer];
             }
             //dodawanie grafiki nastepnego klocka po prawej stronie

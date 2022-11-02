@@ -11,7 +11,6 @@ namespace Gra
         public Plansza Plansza;
         public MaszynaLosujaca MaszynaLosujaca;
         Klocki nastepny_klocek;
-        public int ile_rzedow;
 
         public Klocki Klocek //musi być konstrukcja get, set bo inaczej nie da sie zabrac klocka tak zeby program nie wywalil
         {
@@ -132,21 +131,6 @@ namespace Gra
             {
                 Klocek = MaszynaLosujaca.Losowanie();
             }
-        }
-
-        public int Ile_rzedow() //do cienia na dole planszy
-        {
-            int rzedy = 22;
-            foreach (Wspolrzedne w in Klocek.Kolekcja_wsp())
-            {
-                int zmienna = 0;
-                while (Plansza.Puste_pole(w.rzad + 1 + zmienna, w.kolumna))
-                {
-                    zmienna++;
-                }
-                rzedy = Math.Min(rzedy, zmienna);
-            }
-            return rzedy;
         }
     }
 }

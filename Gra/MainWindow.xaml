@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gra"
-        xmlns:gif="https://github.com/XamlAnimatedGif/WpfAnimatedGif" 
         mc:Ignorable="d"
         Title="Blockomania"
         Width="1280"
@@ -26,7 +25,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/> <!-- #0 -->
             <ColumnDefinition Width="auto"/> <!-- #1 plansza -->
-            <ColumnDefinition Width="*"/> <!-- #2 punkty, nastepny klocek i sterowanie-->
+            <ColumnDefinition Width="*"/> <!-- #2 punkty i nastepny klocek -->
         </Grid.ColumnDefinitions>
 
         <Grid.Background>
@@ -90,8 +89,8 @@
         <Grid Grid.Row="1" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="280"/> <!-- przerwa -->
-                <RowDefinition Height="48"/> <!-- sterowanie -->
-                <RowDefinition Height="0"/> <!-- obrazki (poki co ukryte, jak cos to 128px jest git) -->
+                <RowDefinition Height="40"/> <!-- sterowanie -->
+                <RowDefinition Height="128"/> <!-- obrazki -->
                 <RowDefinition Height="auto"/> <!-- w i obracanie-->
                 <RowDefinition Height="auto"/> <!-- asd i ruchy -->
                 <RowDefinition Height="20"/> <!-- ^ -->
@@ -113,7 +112,7 @@
                 Text="Sterowanie:"
             />
 
-            <Grid Grid.Row="2" Grid.Column="1" Visibility="Hidden">
+            <Grid Grid.Row="2" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
@@ -174,24 +173,17 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         Source="/Assets/icons8-w-key-50.png"
-                        Width="50"
-                        Height="50"
+                        Width="32"
+                        Height="32"
                     />
                 </StackPanel>
-                
-                <StackPanel
+                <TextBlock
                     Grid.Row="0"
                     Grid.Column="2"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center">
-                    <TextBlock
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        FontSize="20"
-                        TextAlignment="Left"
-                        Text=" ⇐ obracanie"
-                    />
-                 </StackPanel>
+                    FontSize="20"
+                    TextAlignment="Left"
+                    Text=" ⇐ obracanie"
+                />
             </Grid>
             
             <Grid Grid.Row="4" Grid.Column="1">
@@ -202,52 +194,42 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-
-                <StackPanel
+                
+                <TextBlock 
                     Grid.Row="0"
                     Grid.Column="0"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Center">
-                    <TextBlock 
-                        FontSize="20"
-                        TextAlignment="Right"
-                        Text="ruch w lewo ⇒ "
-                    />
-                </StackPanel>
+                    FontSize="20"
+                    TextAlignment="Center"
+                    Text="ruch w lewo ⇒ "
+                />
                 <Image 
                     Grid.Row="0"
                     Grid.Column="1"
                     Source="/Assets/icons8-a-key-50.png"
-                    Width="50"
-                    Height="50"
+                    Width="32"
+                    Height="32"
                 />
                 <Image 
                     Grid.Row="0"
                     Grid.Column="2"
                     Source="/Assets/icons8-s-key-50.png"
-                    Width="50"
-                    Height="50"
+                    Width="32"
+                    Height="32"
                 />
                 <Image 
                     Grid.Row="0"
                     Grid.Column="3"
                     Source="/Assets/icons8-d-key-50.png"
-                    Width="50"
-                    Height="50"
+                    Width="32"
+                    Height="32"
                 />
-                <StackPanel
+                <TextBlock 
                     Grid.Row="0"
                     Grid.Column="4"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center">
-                    <TextBlock 
-                        Grid.Row="0"
-                        Grid.Column="4"
-                        FontSize="20"
-                        TextAlignment="Left"
-                        Text=" ⇐ ruch w prawo"
-                    />
-                </StackPanel>
+                    FontSize="20"
+                    TextAlignment="Center"
+                    Text=" ⇐ ruch w prawo"
+                />
             </Grid>
 
             <Grid Grid.Row="5" Grid.Column="1">
@@ -304,8 +286,8 @@
                     VerticalAlignment="Center">
                     <Image
                         Source="/Assets/icons8-space-key-50.png"
-                        Width="50"
-                        Height="50"
+                        Width="32"
+                        Height="32"
                         Margin="10"
                     />
                 </StackPanel>
