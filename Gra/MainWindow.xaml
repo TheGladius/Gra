@@ -331,7 +331,7 @@
             Grid.Column="1">
             <Canvas 
                 x:Name="Canvas"
-                Background="#202020"
+                Background="#202020" 
                 Width="320"
                 Height="640" 
                 ClipToBounds="True"
@@ -339,12 +339,12 @@
             />
         </Viewbox>
 
-        <!-- koniec gry -->
+        <!-- koniec gry ,#CC000000-->
         <Grid 
             x:Name="Game_Over"
             Grid.RowSpan="3"
             Grid.ColumnSpan="3"
-            Background="#CC000000"
+            Background="Black"
             Visibility="Hidden">
 
             <StackPanel 
