@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,6 +47,8 @@ namespace Gra
             new BitmapImage(new Uri("Assets/T.png", UriKind.Relative)),
             new BitmapImage(new Uri("Assets/Z.png", UriKind.Relative))
         };
+
+        //SoundPlayer player = new SoundPlayer("Assets/GeometricalDominator.mp3");
 
         Image[,] Ustawienia_pol(Plansza grid)
         {
@@ -142,8 +146,22 @@ namespace Gra
             Rysowanie(Rozgrywka);
         }
 
+       /* void PlaySound() //stara funkcja do muzyczki
+        {
+            var uri = new Uri("Assets/Geometrical Dominator.mp3", UriKind.RelativeOrAbsolute);
+            var player = new MediaPlayer();
+
+            player.Open(uri);
+            player.Play();
+        }*/
+
+
         async Task Gramy() //musi byc async do czekania await
         {
+            //PlaySound();
+            SoundPlayer player = new SoundPlayer("Assets/Geometrical-Dominator.wav");
+            player.Load();
+            player.Play();
             Rysowanie(Rozgrywka); //pierwsze narysowanie pustej planszy
             while (Rozgrywka.koniec == false)
             {

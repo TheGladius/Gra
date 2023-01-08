@@ -15,6 +15,8 @@
     <None Remove="Assets\Blue.png" />
     <None Remove="Assets\Border.png" />
     <None Remove="Assets\Empty.png" />
+    <None Remove="Assets\Geometrical Dominator.mp3" />
+    <None Remove="Assets\Geometrical-Dominator.wav" />
     <None Remove="Assets\Green.png" />
     <None Remove="Assets\I.png" />
     <None Remove="Assets\icons8-a-key-50.png" />
@@ -41,6 +43,15 @@
 	<None Remove="Assets\wasd.png" />
 	<None Remove="Assets\Yellow.png" />
     <None Remove="Assets\Z.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Geometrical Dominator.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Geometrical-Dominator.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

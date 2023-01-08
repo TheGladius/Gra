@@ -344,7 +344,7 @@
             x:Name="Game_Over"
             Grid.RowSpan="3"
             Grid.ColumnSpan="3"
-            Background="Black"
+            Background="#CC000000"
             Visibility="Hidden">
 
             <StackPanel 
